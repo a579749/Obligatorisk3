@@ -20,16 +20,21 @@ public class Blogg {
 	}
 
 	public int getAntall() {
-		throw new UnsupportedOperationException(TODO.method());
+		int x=0;
+		for(int i=0; i<innleggstabell.length; i++){
+			if (innleggstabell[i]!=null){
+				x++;
+			}
+		}
+		return x;
 	}
 	
 	public Innlegg[] getSamling() {
-		throw new UnsupportedOperationException(TODO.method());
-
+		return innleggstabell;
 	}
 	
 	public int finnInnlegg(Innlegg innlegg) {
-
+		
 		throw new UnsupportedOperationException(TODO.method());
 	}
 
