@@ -34,25 +34,65 @@ public class Blogg {
 	}
 	
 	public int finnInnlegg(Innlegg innlegg) {
+
+		for(int i=0; i<innleggstabell.length; i++){
+			if(innleggstabell[i].getId()==innlegg.getId()){
+				return i;
+			}	
+		}
+		return -1;
 		
-		throw new UnsupportedOperationException(TODO.method());
 	}
 
 	public boolean finnes(Innlegg innlegg) {
-		throw new UnsupportedOperationException(TODO.method());
+		for(int i=0; i<innleggstabell.length; i++){
+			if(innleggstabell[i].getId()==innlegg.getId()){
+				return true;
+			}	
+		}
+		return false;
 	}
 
 	public boolean ledigPlass() {
-		throw new UnsupportedOperationException(TODO.method());
+		for(int i=0; i<innleggstabell.length; i++){
+			if(innleggstabell[i]==null){
+				return true;
+			}
+		
+		}
+		return false;
+		
 
 	}
 	
 	public boolean leggTil(Innlegg innlegg) {
 
-		throw new UnsupportedOperationException(TODO.method());
+		
+			if(!finnes(innlegg)){
+				for(int i=0; i<innleggstabell.length; i++){
+					if(innleggstabell[i]==null){
+						innleggstabell[i]=innlegg;
+						return true;
+					}
+				}
+			}
+		
+			return false;
+		
+
+		
 	}
 	
 	public String toString() {
+		String a;
+		for(int i=0; i<innleggstabell.length; i++){
+			if(i==0){
+				a=getAntall()+"\n"+innleggstabell[i].getTekst();
+			}
+			
+			return getAntall()+"\n"+innleggstabell[i].getBruker();
+		}
+		
 		throw new UnsupportedOperationException(TODO.method());
 	}
 
