@@ -10,14 +10,20 @@ public class SkrivBlogg {
 
 	public static boolean skriv(Blogg samling, String mappe, String filnavn) {
 
-		String filecontent="";
-		for(int i=0; i<samling.getAntall(); i++){
-			filecontent
+		String filecontent=samling.toString();
+		PrintWriter writer=null;
+
+		try{
+			writer=new PrintWriter(filnavn);
+			
 		}
-		String+=
-
+		catch(FileNotFoundException e){
+			System.out.println("skrrt, file not found, skrrt");
+			
+		}
+		writer.println(samling.toString());
+		writer.close();
+		return true;
 		
-
-		throw new UnsupportedOperationException(TODO.method());
 	}
 }

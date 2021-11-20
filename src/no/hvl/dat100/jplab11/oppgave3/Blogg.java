@@ -9,6 +9,7 @@ public class Blogg {
 	
 	
 	Bilde[] innleggstabell;
+	Tekst[] innleggstabellskrrt;
 	int nestledig;
 	
 	
@@ -54,6 +55,14 @@ public class Blogg {
 		}
 		return false;
 	}
+	public boolean finnes(Tekst innlegg) {
+		for(int i=0; i<innleggstabell.length; i++){
+			if(innleggstabell[i].getId()==innlegg.getId()){
+				return true;
+			}	
+		}
+		return false;
+	}
 
 	public boolean ledigPlass() {
 		for(int i=0; i<innleggstabell.length; i++){
@@ -63,25 +72,36 @@ public class Blogg {
 		
 		}
 		return false;
-		
-
 	}
 	
 	public boolean leggTil(Bilde innlegg) {
 
-		
+		if(innlegg instanceof Innlegg){
 			if(!finnes(innlegg)){
 				for(int i=0; i<innleggstabell.length; i++){
 					if(innleggstabell[i]==null){
-						innleggstabell[i]=innlegg;
+						innleggstabell[i]=(Bilde)innlegg;
 						return true;
 					}
 				}
 			}
-		
+		}
 			return false;
 		
+	}
+	public boolean leggTil(Tekst innlegg) {
 
+		if(innlegg instanceof Innlegg){
+			if(!finnes(innlegg)){
+				for(int i=0; i<innleggstabell.length; i++){
+					if(innleggstabell[i]==null){
+						innleggstabellskrrt[i]=(Tekst)innlegg;
+						return true;
+					}
+				}
+			}
+		}
+			return false;
 		
 	}
 	
