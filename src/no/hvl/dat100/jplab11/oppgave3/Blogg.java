@@ -3,12 +3,14 @@ package no.hvl.dat100.jplab11.oppgave3;
 import no.hvl.dat100.jplab11.common.TODO;
 import no.hvl.dat100.jplab11.oppgave1.*;
 
+
+
 public class Blogg {
 	
 	
 	Innlegg[] innleggstabell;
 	int nestledig;
-
+	
 	
 
 	public Blogg() {
@@ -84,11 +86,14 @@ public class Blogg {
 	}
 	
 	public String toString() {
-		String a;
-		for(int i=0; i<innleggstabell.length; i++){
+		String a="";
+		for(int i=0; i<innleggstabell.length;){
 			if(i==0){
-				a=getAntall()+"\n"+innleggstabell[i].getTekst();
+				a=getAntall()+"\n"+innleggstabell[i].getBruker()+"\n"+innleggstabell[i].getDato()+"\n"+innleggstabell[i].getId()+"\n"+innleggstabell[i].getLikes()+"\n";
+				i++;
 			}
+			a+=innleggstabell[i].getBruker()+"\n"+innleggstabell[i].getDato()+"\n"+innleggstabell[i].getId()+"\n"+innleggstabell[i].getLikes()+"\n";
+			i++;
 			
 			return getAntall()+"\n"+innleggstabell[i].getBruker();
 		}
