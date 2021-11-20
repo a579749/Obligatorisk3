@@ -89,13 +89,13 @@ public class Blogg {
 		String a="";
 		for(int i=0; i<innleggstabell.length;){
 			if(i==0){
-				a=getAntall()+"\n"+innleggstabell[i].getBruker()+"\n"+innleggstabell[i].getDato()+"\n"+innleggstabell[i].getId()+"\n"+innleggstabell[i].getLikes()+"\n";
+				a+=getAntall()+"\n"+innleggstabell[i].getBruker()+"\n"+innleggstabell[i].getDato()+"\n"+innleggstabell[i].getId()+"\n"+innleggstabell[i].getLikes()+"\n";
 				i++;
 			}
 			a+=innleggstabell[i].getBruker()+"\n"+innleggstabell[i].getDato()+"\n"+innleggstabell[i].getId()+"\n"+innleggstabell[i].getLikes()+"\n";
 			i++;
 			
-			return getAntall()+"\n"+innleggstabell[i].getBruker();
+			return a;
 		}
 		
 		throw new UnsupportedOperationException(TODO.method());
