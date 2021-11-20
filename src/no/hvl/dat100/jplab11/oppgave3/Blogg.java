@@ -2,23 +2,23 @@ package no.hvl.dat100.jplab11.oppgave3;
 
 import no.hvl.dat100.jplab11.common.TODO;
 import no.hvl.dat100.jplab11.oppgave1.*;
-
+import no.hvl.dat100.jplab11.oppgave2.*;
 
 
 public class Blogg {
 	
 	
-	Innlegg[] innleggstabell;
+	Bilde[] innleggstabell;
 	int nestledig;
 	
 	
-
+	
 	public Blogg() {
-		Innlegg[] innleggstabell=new Innlegg[20];
+		innleggstabell=new Bilde[20];
 	}
 
 	public Blogg(int lengde) {
-		Innlegg[] innleggstabell=new Innlegg[lengde];
+		innleggstabell=new Bilde[lengde];
 	}
 
 	public int getAntall() {
@@ -35,7 +35,7 @@ public class Blogg {
 		return innleggstabell;
 	}
 	
-	public int finnInnlegg(Innlegg innlegg) {
+	public int finnInnlegg(Bilde innlegg) {
 
 		for(int i=0; i<innleggstabell.length; i++){
 			if(innleggstabell[i].getId()==innlegg.getId()){
@@ -46,7 +46,7 @@ public class Blogg {
 		
 	}
 
-	public boolean finnes(Innlegg innlegg) {
+	public boolean finnes(Bilde innlegg) {
 		for(int i=0; i<innleggstabell.length; i++){
 			if(innleggstabell[i].getId()==innlegg.getId()){
 				return true;
@@ -67,7 +67,7 @@ public class Blogg {
 
 	}
 	
-	public boolean leggTil(Innlegg innlegg) {
+	public boolean leggTil(Bilde innlegg) {
 
 		
 			if(!finnes(innlegg)){
@@ -87,18 +87,18 @@ public class Blogg {
 	
 	public String toString() {
 		String a="";
-		for(int i=0; i<innleggstabell.length;){
+		for(int i=0; i<getAntall();){
 			if(i==0){
 				a+=getAntall()+"\n"+innleggstabell[i].getBruker()+"\n"+innleggstabell[i].getDato()+"\n"+innleggstabell[i].getId()+"\n"+innleggstabell[i].getLikes()+"\n";
 				i++;
 			}
-			a+=innleggstabell[i].getBruker()+"\n"+innleggstabell[i].getDato()+"\n"+innleggstabell[i].getId()+"\n"+innleggstabell[i].getLikes()+"\n";
+			a+=innleggstabell[i].getTekst()+"\n"+"BILDE"+"\n"+innleggstabell[i].getId()+"\n"+innleggstabell[i].getBruker()+"\n"+innleggstabell[i].getDato()+"\n"+innleggstabell[i].getLikes()+"\n"+innleggstabell[i]+"\n"+"et bilde"+"\n"+innleggstabell[i].getUrl()+"\n";
 			i++;
 			
-			return a;
+			
 		}
 		
-		throw new UnsupportedOperationException(TODO.method());
+		return a;
 	}
 
 	// valgfrie oppgaver nedenfor

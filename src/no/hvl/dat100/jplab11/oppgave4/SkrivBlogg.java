@@ -10,6 +10,14 @@ public class SkrivBlogg {
 
 	public static boolean skriv(Blogg samling, String mappe, String filnavn) {
 
+		String filecontent="";
+		for(int i=0; i<samling.getAntall(); i++){
+			filecontent
+		}
+		String+=
+
+		
+
 		throw new UnsupportedOperationException(TODO.method());
 	}
 }
